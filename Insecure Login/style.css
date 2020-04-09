@@ -1,0 +1,44 @@
+body {
+	background-color:  #f2f4f4;
+}
+/* Responsive first */
+.centralizer {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+h1, h4 {
+	text-align: center;
+}
+#btnContinue, #btnForgot, #btnCancelLogin, #btnCancelForgot, #btnContinueForgot, #btnFinishRecovery {
+	width: 100%;
+}
+label {
+	display: none;
+}
+.btn-pass {
+	width: 50%;
+	display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+	.jumbotron {
+		width: 50%;
+		min-width: 514px;
+	}
+	#btnContinue, #btnContinueForgot {
+		display: inline-block;
+		width: 45%;
+		margin-right: 5%;
+	}
+	#btnForgot, #btnCancelForgot {
+		display: inline-block;
+		width: 45%;
+		margin-left: 5%;
+	}
+	label {
+		display: block;
+	}
+}

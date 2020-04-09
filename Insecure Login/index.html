@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="The login page for Very Secure Site Services">
+		<meta name="author" content="MiniMuleNZ">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login to Very Secure Site Services</title>
+		<!-- jQuery 3.4.1 -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<!-- BootStrap 4.4.1 -->
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<!-- CRC32 Library - used just to produce predictable output when a username is entered -->
+		<script src="crc32.js"></script>
+		<!-- Custom styles -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Custom JavaScript -->
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<div class="centralizer">
+			<div class="jumbotron">
+				<div id="feedback" class="alert show" role="alert" style="display: none;">
+					<strong class="title"></strong>
+					<span class="inner-text"></span>
+				</div>
+				<div id="step-1">
+					<h1>Please Log In</h1>
+					<div class="form-group row">
+						<label for="inputUsername" class="col-md-2 col-form-label">Username:</label>
+						<div class="col-md-10">
+							<input type="text" class="form-control" id="inputUsername" placeholder="Username">
+						</div>
+					</div>
+					<button class="btn btn-primary" type="button" id="btnContinue">Continue</button><!--
+						You've got a choice:
+						 - The markup can work
+						 - The markup can look nice
+						Please choose ONE answer only
+					--><button class="btn btn-secondary" type="button" id="btnForgot">Forgot Password</button>
+				</div>
+				<div id="password-recovery" style="display: none">
+					<h1>Password Recovery</h1>
+					<div class="form-group row">
+						<label for="inputEmail" class="col-md-2 col-form-label">Email:</label>
+						<div class="col-md-10">
+							<input type="text" class="form-control" id="inputEmail" placeholder="Email Address">
+						</div>
+					</div>
+					<button class="btn btn-primary" type="button" id="btnContinueForgot">Continue</button><!--
+						Once again I choose to have readable code.
+						Damn inline-block whitespace issues!
+					--><button class="btn btn-secondary" type="button" id="btnCancelForgot">Cancel</button>
+				</div>
+				<div id="password-recovery-extra" style="display: none;">
+					<p>Can't access this email or didn't receive our email? <a href="#" id="password-retriever">Click Here</a></p>
+					<div class="password-display row" style="display: none;">
+						<label for="passwordDisplay" class="col-md-4 col-form-label">Your Password Is:</label>
+						<div class="col-md-8">
+							<input type="text" class="form-control" readonly="readonly" id="passwordDisplay">
+						</div>
+					</div>
+					<br/>
+					<button class="btn btn-primary" type="button" id="btnFinishRecovery">Back</button>
+				</div>
+				<div id="step-2" style="display: none;">
+					<h1>Select Your Password</h1>
+					<h4>Note: You will be locked out after 4 wrong attempts</h4>
+					<div id="pass-options"></div>
+					<button class="btn btn-outline-secondary" type="button" id="btnCancelLogin">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
