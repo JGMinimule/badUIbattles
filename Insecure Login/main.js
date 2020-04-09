@@ -85,7 +85,7 @@
 			$('#password-recovery').show();
 		} );
 		// Click event for the password recovery cancel button
-		$('#btnForgotCancel').click( function() {
+		$('#btnCancelForgot').click( function() {
 			// Show step 1 and hide the recovery
 			$('#password-recovery').hide();
 			$('#step-1').show();
